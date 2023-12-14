@@ -23,20 +23,37 @@ function generatePassword() {
   var isUppercase = confirm("Should password include UPPERCASE letters? (Ok = Yes, Cancel = No)");
   var isNumeric = confirm("Should password include any numbers? (Ok = Yes, Cancel = No)");
   var isSpecial = confirm("Should password include any special characters? (Ok = Yes, Cancel = No)");
-    for(i = 0; i = passwordLength; i++) {
-      if (isLowercase) {
-       return lowercase[Math.floor(Math.random()*lowercase.length)];
+  var newPassword = "";
+    if (isLowercase) {
+       for (let i = 0; i < passwordLength; i++) { 
+        var randomLowercase = Math.floor(Math.random()*lowercase.length)
+        var lowerOptions = lowercase[randomLowercase];
+          newPassword += lowerOptions;
+        }
+       }
+    if (isUppercase) {
+        for (let i = 0; i < passwordLength; i++) {
+        var randomUppercase = Math.floor(Math.random()*uppercase.length)
+        var upperOptions = uppercase[randomUppercase];
+        newPassword += upperOptions;
+        }
       }
-      if (isUppercase) {
-        return uppercase[Math.floor(Math.random()*uppercase.length)];
+    if (isNumeric) {
+        for (let i = 0; i < passwordLength; i++) {
+          var randomNumeric = Math.floor(Math.random()*numeric.length)
+          var numericOptions = numeric[randomNumeric];
+        newPassword += numericOptions;
+        }
       }
-      if (isNumeric) {
-        return numeric[Math.floor(Math.random()*numeric.length)];
+    if (isSpecial) {
+        for (let i = 0; i < passwordLength; i++) {
+          var randomSpecial = Math.floor(Math.random()*special.length)
+          var specialOptions = special[randomSpecial];
+        newPassword += specialOptions;
+        }
       }
-      if (isSpecial) {
-        return special[Math.floor(Math.random()*special.length)];
-      }
-    }
+      
+  return newPassword;
 }
 
 //create a loop
@@ -47,15 +64,25 @@ function generatePassword() {
 //   return lowercase[Math.floor(Math.random()*lowercase.length)];
 // }
 
+// var randomLowercase = Math.floor(Math.random()*lowercase.length)
+// var lowerOptions = lowercase[randomLowercase];
+
 // function randomUppercase(uppercase) {
 //   return uppercase[Math.floor(Math.random()*uppercase.length)];
 // }
+
+// var randomUppercase = Math.floor(Math.random()*uppercase.length)
+// var upperOptions = uppercase[randomUppercase];
 
 // function randomNumeric(numeric) {
 //   return numeric[Math.floor(Math.random()*numeric.length)];
 // }
 
+// var randomNumeric = Math.floor(Math.random()*numeric.length)
+// var numericOptions = numeric[randomNumeric];
+
 // function randomSpecial(special) {
 //   return special[Math.floor(Math.random()*special.length)];
 // }
-
+// var randomSpecial = Math.floor(Math.random()*special.length)
+// var specialOptions = numeric[randomSpecial];
