@@ -18,14 +18,14 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword) {
-  // var passwordLength = prompt("How long should this password be?", "8-128 characters");
-  // var isLowercase = prompt("Should password include lowercase letters? (Ok = yes, Cancel = No");
-  // var isUppercase = prompt("Should password include UPPERCASE letters? (Ok = yes, Cancel = No");
-  // var isNumeric = prompt("Should password include any numbers? (Ok = yes, Cancel = No");
-  // var isSpecial = prompt("Should password include any special characters? (Ok = yes, Cancel = No");
-
+// Add event listener to generate button (removed writePassword and replaced with e =>)
+generateBtn.addEventListener("click", e => {
+  var passwordLength = prompt("How long should this password be?", "8-128 characters");
+  var isLowercase = confirm("Should password include lowercase letters? (Ok = Yes, Cancel = No)");
+  var isUppercase = confirm("Should password include UPPERCASE letters? (Ok = Yes, Cancel = No)");
+  var isNumeric = confirm("Should password include any numbers? (Ok = Yes, Cancel = No)");
+  var isSpecial = confirm("Should password include any special characters? (Ok = Yes, Cancel = No)");
+});
 
 
 // console.log(passwordLength);
