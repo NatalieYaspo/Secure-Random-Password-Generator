@@ -29,43 +29,42 @@ function generatePassword() {
   var newPassword = "";
   //loops will run to fill the length of the password that the user selected.
   for (let i = 0; i < passwordLength; i++) {
-  //if and loops to see what the password needs.
-   if(isLowercase) {
-      // for (let i = 0; i < passwordLength; i++) { 
-        var randomLowercase = Math.floor(Math.random()*lowercase.length)
-        var lowerOptions = lowercase[randomLowercase];
-         newPassword += lowerOptions
-      // }
+    //if and loops to see what the password needs.
+     if(isLowercase) {
+        // for (let i = 0; i < passwordLength; i++) { 
+          var randomLowercase = Math.floor(Math.random()*lowercase.length)
+          var lowerOptions = lowercase[randomLowercase];
+           newPassword += lowerOptions
+        // }
+      }
+      if(isUppercase) {
+        // for (let i = 0; i < passwordLength; i++) { 
+        var randomUppercase = Math.floor(Math.random()*uppercase.length)
+        var upperOptions = uppercase[randomUppercase];
+            newPassword += upperOptions;
+        // }
+      }
+      if(isNumeric) {
+        // for (let i = 0; i < passwordLength; i++) { 
+            var randomNumeric = Math.floor(Math.random()*numeric.length)
+            var numericOptions = numeric[randomNumeric];
+            newPassword += numericOptions;
+        // }
+      }
+      if(isSpecial) {
+        // for (let i = 0; i < passwordLength; i++) { 
+            var randomSpecial = Math.floor(Math.random()*special.length)
+            var specialOptions = special[randomSpecial];
+          newPassword += specialOptions;
+        // }
+      }
     }
-    if(isUppercase) {
-      // for (let i = 0; i < passwordLength; i++) { 
-      var randomUppercase = Math.floor(Math.random()*uppercase.length)
-      var upperOptions = uppercase[randomUppercase];
-          newPassword += upperOptions;
-      // }
-    }
-    if(isNumeric) {
-      // for (let i = 0; i < passwordLength; i++) { 
-          var randomNumeric = Math.floor(Math.random()*numeric.length)
-          var numericOptions = numeric[randomNumeric];
-          newPassword += numericOptions;
-      // }
-    }
-    if(isSpecial) {
-      // for (let i = 0; i < passwordLength; i++) { 
-          var randomSpecial = Math.floor(Math.random()*special.length)
-          var specialOptions = special[randomSpecial];
-        newPassword += specialOptions;
-      // }
-    }
+     //This is where my password will actually spit out.   
+    return newPassword;
   }
-   //This is where my password will actually spit out.   
-  return newPassword;
-}
-
-//create a loop
-
-
+  
+  //create a loop
+  
 //Randomizers
 // function randomLowercase(lowercase) {
 //   return lowercase[Math.floor(Math.random()*lowercase.length)];
