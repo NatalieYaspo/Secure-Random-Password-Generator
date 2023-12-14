@@ -18,41 +18,48 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
   
 function generatePassword() {
+  //propmts to get criteria for password.
   var passwordLength = prompt("How long should this password be?", "8-128 characters");
+  //I NEED TO ENTER SOMETHING HERE TO ONLY ALLOW USER TO ENTER NUMBERS 8-128 AND KICK BACK AN ERROR FOR OTHER NUMBERS.
   var isLowercase = confirm("Should password include lowercase letters? (Ok = Yes, Cancel = No)");
   var isUppercase = confirm("Should password include UPPERCASE letters? (Ok = Yes, Cancel = No)");
   var isNumeric = confirm("Should password include any numbers? (Ok = Yes, Cancel = No)");
   var isSpecial = confirm("Should password include any special characters? (Ok = Yes, Cancel = No)");
+  //newPassword will run everything below to develop the password.
   var newPassword = "";
-    if (isLowercase) {
-       for (let i = 0; i < passwordLength; i++) { 
+  //loops will run to fill the length of the password that the user selected.
+  for (let i = 0; i < passwordLength; i++) {
+  //if and loops to see what the password needs.
+   if(isLowercase) {
+      // for (let i = 0; i < passwordLength; i++) { 
         var randomLowercase = Math.floor(Math.random()*lowercase.length)
         var lowerOptions = lowercase[randomLowercase];
-          newPassword += lowerOptions;
-        }
-       }
-    if (isUppercase) {
-        for (let i = 0; i < passwordLength; i++) {
-        var randomUppercase = Math.floor(Math.random()*uppercase.length)
-        var upperOptions = uppercase[randomUppercase];
-        newPassword += upperOptions;
-        }
-      }
-    if (isNumeric) {
-        for (let i = 0; i < passwordLength; i++) {
+         newPassword += lowerOptions
+      // }
+    }
+    if(isUppercase) {
+      // for (let i = 0; i < passwordLength; i++) { 
+      var randomUppercase = Math.floor(Math.random()*uppercase.length)
+      var upperOptions = uppercase[randomUppercase];
+          newPassword += upperOptions;
+      // }
+    }
+    if(isNumeric) {
+      // for (let i = 0; i < passwordLength; i++) { 
           var randomNumeric = Math.floor(Math.random()*numeric.length)
           var numericOptions = numeric[randomNumeric];
-        newPassword += numericOptions;
-        }
-      }
-    if (isSpecial) {
-        for (let i = 0; i < passwordLength; i++) {
+          newPassword += numericOptions;
+      // }
+    }
+    if(isSpecial) {
+      // for (let i = 0; i < passwordLength; i++) { 
           var randomSpecial = Math.floor(Math.random()*special.length)
           var specialOptions = special[randomSpecial];
         newPassword += specialOptions;
-        }
-      }
-      
+      // }
+    }
+  }
+   //This is where my password will actually spit out.   
   return newPassword;
 }
 
