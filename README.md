@@ -2,14 +2,9 @@
 
 ## Description
 
-A site that will help generate random, but secure, passwords.
+A site that will help generate random, but secure, passwords based on certian criteria.
+This will help provide greater security for my computer/company.
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
 
 ## Installation
 
@@ -17,9 +12,12 @@ Enter URL Here:
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+User will be out through a series of prompts to generate a secure password.
+These prompts ask if user would like to include certain criteria in their password including:
+-length of password
+-whether or not to include lowercase, uppercase, numeric and/or special characters
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+Then a random, secure password will be generated based on needed criteria.
 
 ![alt text](assets/images/screenshot.png)
 
