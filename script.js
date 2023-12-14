@@ -1,13 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var lowercase = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
-var UPPERCASE = [...Array(26)].map((_, i) => String.fromCharCode(i + 65));
+var uppercase = [...Array(26)].map((_, i) => String.fromCharCode(i + 65));
 var numeric = [...Array(10)].map((_, i) => String.fromCharCode(i + 48));
 var special = [...Array(15)].map((_, i) => String.fromCharCode(i + 33));
-console.log(lowercase);
-console.log(UPPERCASE);
-console.log(numeric);
-console.log(special);
 
 // Write password to the #password input
 function writePassword() {
@@ -20,13 +16,33 @@ function writePassword() {
 
 // Add event listener to generate button (removed writePassword and replaced with e =>)
 generateBtn.addEventListener("click", e => {
-  var passwordLength = prompt("How long should this password be?", "8-128 characters");
-  var isLowercase = confirm("Should password include lowercase letters? (Ok = Yes, Cancel = No)");
-  var isUppercase = confirm("Should password include UPPERCASE letters? (Ok = Yes, Cancel = No)");
-  var isNumeric = confirm("Should password include any numbers? (Ok = Yes, Cancel = No)");
-  var isSpecial = confirm("Should password include any special characters? (Ok = Yes, Cancel = No)");
+  let passwordLength = prompt("How long should this password be?", "8-128 characters");
+  let isLowercase = confirm("Should password include lowercase letters? (Ok = Yes, Cancel = No)");
+  let isUppercase = confirm("Should password include UPPERCASE letters? (Ok = Yes, Cancel = No)");
+  let isNumeric = confirm("Should password include any numbers? (Ok = Yes, Cancel = No)");
+  let isSpecial = confirm("Should password include any special characters? (Ok = Yes, Cancel = No)");
 });
 
 
-// console.log(passwordLength);
-// console.log(isLowercase);
+//Randomizers
+function randomLowercase(lowercase) {
+  return lowercase[Math.floor(Math.random()*lowercase.length)];
+}
+
+function randomUppercase(uppercase) {
+  return uppercase[Math.floor(Math.random()*uppercase.length)];
+}
+
+function randomNumeric(numeric) {
+  return numeric[Math.floor(Math.random()*numeric.length)];
+}
+
+function randomSpecial(special) {
+  return special[Math.floor(Math.random()*special.length)];
+}
+
+
+// if (isLowercase: true) {
+//   console.log(randomLowercase(lowercase));
+// }
+
