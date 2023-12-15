@@ -16,11 +16,12 @@ function writePassword() {
 
 // Add event listener to generate button (removed writePassword and replaced with e =>)
 generateBtn.addEventListener("click", writePassword);
-  
+
+
 function generatePassword() {
   //propmts to get criteria for password.
-  var passwordLength = prompt("How long should this password be?", "8-128 characters");
-  //I NEED TO ENTER SOMETHING HERE TO ONLY ALLOW USER TO ENTER NUMBERS 8-128 AND KICK BACK AN ERROR FOR OTHER NUMBERS.
+  var passwordLength = parseInt(prompt("How long should this password be?", "8-128 characters"));
+  // //I NEED TO ENTER SOMETHING HERE TO ONLY ALLOW USER TO ENTER NUMBERS 8-128 AND KICK BACK AN ERROR FOR OTHER NUMBERS.
   var isLowercase = confirm("Should password include lowercase letters? (Ok = Yes, Cancel = No)");
   var isUppercase = confirm("Should password include UPPERCASE letters? (Ok = Yes, Cancel = No)");
   var isNumeric = confirm("Should password include any numbers? (Ok = Yes, Cancel = No)");
@@ -51,9 +52,12 @@ function generatePassword() {
           newPassword += specialOptions;
       }
     }
-
-     //This is where my password will actually spit out.   
-    return newPassword;
+     /*This is where my password will actually spit out.
+      Having trouble keeping passwordLength to the input due to how I have my for loop built.
+      This code below splits the generated password into an array.
+      Then it slices it to just the length that I want.
+      Then it joins it back into a string.*/
+    return newPassword.split("").slice(0, passwordLength).join("");
   }
   
   //create a loop
