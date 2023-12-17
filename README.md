@@ -31,6 +31,10 @@ Starter Code from: https://git.bootcampcontent.com/UNC-Charlotte/UNCC-VIRT-FSF-F
 
 Code for array of lowercase alphabet: RayRay https://betterprogramming.pub/how-to-generate-an-alphabet-javascript-array-eae6940ea646
 
+Collaborated with:
+Le, Roger, office hours via Zoom, December 13, 2023.
+Peters, Sasha, office hours via Zoom, December 14, 2023.
+
 ## License
 
 None required.
